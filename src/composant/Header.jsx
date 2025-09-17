@@ -135,7 +135,7 @@ export default function Header({ onBooking }) {
       <div 
         className={`md:hidden bg-white/98 backdrop-blur-xl border-t border-pink-100 transition-all duration-500 ease-out overflow-hidden ${
           isMobileMenuOpen 
-            ? 'max-h-96 opacity-100 pt-2' 
+            ? 'max-h-150 opacity-100 pt-2' 
             : 'max-h-0 opacity-0'
         }`}
       >
