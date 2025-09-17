@@ -44,29 +44,29 @@ export default function Booking({ selectedService, onClose }) {
     }
   }, [selectedService]);
 
-  useEffect(() => {
-    const fetchServices = async () => {
-      try {
-        const response = await fetch("http://localhost:3005/api/services");
-        if (response.ok) {
-          const data = await response.json();
-          setServices(data);
-        } else {
-          showNotification("Impossible de charger les services", "error");
-        }
-      } catch (error) {
-        console.error("Erreur réseau:", error);
-        showNotification(
-          "Erreur de connexion lors du chargement des services",
-          "error"
-        );
-      } finally {
-        setLoading(false);
+useEffect(() => {
+  const fetchServices = async () => {
+    try {
+      const response = await fetch("/api/services.js"); // ✅ chemin relatif
+      if (response.ok) {
+        const data = await response.json();
+        setServices(data);
+      } else {
+        showNotification("Impossible de charger les services", "error");
       }
-    };
+    } catch (error) {
+      console.error("Erreur réseau:", error);
+      showNotification(
+        "Erreur de connexion lors du chargement des services",
+        "error"
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    fetchServices();
-  }, []);
+  fetchServices();
+}, []);
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -131,7 +131,7 @@ export default function Booking({ selectedService, onClose }) {
         message: formData.message || "",
       };
 
-      const response = await fetch("http://localhost:3005/api/reservation", {
+      const response = await fetch("/api/reservation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(bookingData),

@@ -7,7 +7,7 @@ export default function Services({ onBooking }) {
   const [displayedServices, setDisplayedServices] = useState(6); // Afficher 6 services par défaut
 
   useEffect(() => {
-    fetch("http://localhost:3005/api/services")
+    fetch("/api/services")
       .then((res) => res.json())
       .then((data) => {
         setServicesData(data);
