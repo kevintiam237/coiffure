@@ -6,6 +6,7 @@ export default function ContactForm() {
     name: "",
     email: "",
     phone: "",
+    address: "",
     message: "",
   });
 
@@ -23,7 +24,7 @@ export default function ContactForm() {
     setStatus(null);
 
     // Validation simple
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.email || !formData.message || !formData.address) {
       setStatus("error");
       setLoading(false);
       return;
@@ -32,7 +33,7 @@ export default function ContactForm() {
     try {
       await sendContactMessage(formData);
       setStatus("success");
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", address: "", message: "" });
     } catch (err) {
       console.log(err);
       setStatus("error");
@@ -42,8 +43,8 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-white to-pink-50 rounded-2xl p-8 shadow-lg border border-pink-100">
-      <h3 className="font-playfair text-2xl font-semibold mb-8 text-gray-800 text-center relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-1/4 after:w-1/2 after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-pink-400 after:to-transparent">
+    <div className="bg-gradient-to-br from-white to-amber-50 rounded-2xl p-8 shadow-lg border border-amber-100">
+      <h3 className="font-playfair text-2xl font-semibold mb-8 text-gray-800 text-center relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-1/4 after:w-1/2 after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-amber-400 after:to-transparent">
         Nous contacter
       </h3>
       
@@ -59,7 +60,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 bg-white shadow-sm focus:shadow-md pl-10"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300 bg-white shadow-sm focus:shadow-md pl-10"
             placeholder="Votre nom complet"
           />
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none mt-7">
@@ -78,7 +79,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 bg-white shadow-sm focus:shadow-md pl-10"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300 bg-white shadow-sm focus:shadow-md pl-10"
             placeholder="votre@email.com"
           />
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none mt-7">
@@ -96,11 +97,30 @@ export default function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 bg-white shadow-sm focus:shadow-md pl-10"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300 bg-white shadow-sm focus:shadow-md pl-10"
             placeholder="01 23 45 67 89"
           />
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none mt-7">
             <span className="text-gray-400">📞</span>
+          </div>
+        </div>
+
+        {/* Adresse (nouveau champ pour service à domicile) */}
+        <div className="relative">
+          <label className="block text-sm font-medium text-gray-700 mb-2 ml-1">
+            Adresse de prestation *
+          </label>
+          <input
+            type="text"
+            name="address"
+            value={formData.address}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300 bg-white shadow-sm focus:shadow-md pl-10"
+            placeholder="Votre adresse complète"
+          />
+          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none mt-7">
+            <span className="text-gray-400">🏠</span>
           </div>
         </div>
 
@@ -115,8 +135,8 @@ export default function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 bg-white shadow-sm focus:shadow-md"
-            placeholder="Décrivez-nous votre demande..."
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300 bg-white shadow-sm focus:shadow-md"
+            placeholder="Décrivez-nous votre demande de service..."
           />
         </div>
 
@@ -130,7 +150,7 @@ export default function ContactForm() {
         {status === "error" && (
           <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-red-800 text-sm flex items-center animate-fadeIn">
             <span className="text-red-500 text-lg mr-2">❌</span>
-            <span>Une erreur est survenue. Veuillez vérifier les champs ou réessayer.</span>
+            <span>Veuillez remplir tous les champs obligatoires (*).</span>
           </div>
         )}
 
@@ -138,7 +158,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-gradient-to-r from-pink-600 to-pink-500 text-white py-3 px-4 rounded-xl hover:from-pink-700 hover:to-pink-600 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center justify-center"
+          className="w-full bg-gradient-to-r from-amber-600 to-amber-500 text-white py-3 px-4 rounded-xl hover:from-amber-700 hover:to-amber-600 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center justify-center"
         >
           {loading ? (
             <>

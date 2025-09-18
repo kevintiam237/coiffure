@@ -5,6 +5,8 @@ import Contact from "./composant/Contact";
 import Footer from "./composant/Footer";
 import Header from "./composant/Header";
 import Services from "./composant/services";
+import Prestations from "./composant/Politiques";
+
 
 function App() {
   const [showBooking, setShowBooking] = useState(false);
@@ -26,6 +28,7 @@ function App() {
           onClose={() => setShowBooking(false)}
         />
       )}
+      <Prestations/>
       <Contact />
       <Footer />
     </>
