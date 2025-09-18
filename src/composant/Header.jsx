@@ -45,7 +45,7 @@ export default function Header({ onBooking }) {
               <div className="absolute -inset-2 bg-amber-400/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative p-1 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-lg border border-amber-300/50">
                 <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden border border-amber-200">
-                  <img src="../../public/logo.png" alt="Logo La Braideuse" className="w-12 h-12 object-contain" />
+                  <img src="/logo.png" alt="Logo La Braideuse" className="w-12 h-12 object-contain" />
                 </div>
               </div>
             </div>

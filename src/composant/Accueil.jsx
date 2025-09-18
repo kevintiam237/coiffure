@@ -38,7 +38,7 @@ export default function Accueil({ onBooking }) {
           {/* Logo animé */}
           <div className="animate-[float_6s_ease-in-out_infinite] inline-flex items-center justify-center w-36 h-36 bg-gradient-to-br from-white to-amber-50 rounded-full shadow-2xl mb-10 border-4 border-amber-300/50 relative group">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-amber-400/20 to-amber-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <img src="../../public/logo.png" alt="logo" className="rounded-full w-36 h-36 object-cover" />
+            <img src="/logo.png" alt="logo" className="rounded-full w-36 h-36 object-cover" />
             <div className="absolute -inset-4 bg-amber-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
 
