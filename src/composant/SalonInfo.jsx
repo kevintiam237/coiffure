@@ -2,7 +2,7 @@ export default function SalonInfo() {
   const contactInfo = [
     { emoji: "📞", title: "Téléphone", content: "+1 (343) 551-8233" },
     { emoji: "✉️", title: "Email", content: "elza@elegance-coiffure.fr" },
-    { emoji: "🕒", title: "Horaires", content: "Mar - Dim: 9h00 - 19h00" },
+    { emoji: "🕒", title: "Horaires", content: "Mar - Dim: 24h/24" },
     { emoji: "📍", title: "Service", content: "Prestations à domicile\nDans toute la région d'Ottawa" },
   ];
 

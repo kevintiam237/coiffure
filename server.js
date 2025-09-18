@@ -53,7 +53,7 @@ app.get("/api/services", async (req, res) => {
 
 // POST /api/reservation → Réception d'une réservation
 app.post("/api/reservation", async (req, res) => {
-  const { name, email, phone, service, date, time, message } = req.body;
+  const { name, email, phone, service, date, time, address,message } = req.body;
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -77,6 +77,7 @@ app.post("/api/reservation", async (req, res) => {
       - Service : ${service}
       - Date : ${date}
       - Heure : ${time}
+      - Adresse : ${address}
       - Message : ${message || "Aucun message"}
     `,
   };
@@ -92,7 +93,7 @@ app.post("/api/reservation", async (req, res) => {
 
 // POST /api/contact → Message général depuis le formulaire de contact
 app.post("/api/contact", async (req, res) => {
-  const { name, email, phone, message } = req.body;
+  const { name, email, phone, address,message } = req.body;
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -111,6 +112,7 @@ app.post("/api/contact", async (req, res) => {
       Nom : ${name}
       Email : ${email}
       Téléphone : ${phone}
+      Adresse : ${address}
       Message : ${message}
     `,
   };

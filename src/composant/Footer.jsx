@@ -1,4 +1,5 @@
 import React from "react";
+import { FaTiktok } from "react-icons/fa";
 import {
   Heart,
   Instagram,
@@ -11,6 +12,7 @@ import {
   Home,
 } from "lucide-react";
 
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -18,11 +20,12 @@ export default function Footer() {
     { name: "Facebook", icon: Facebook, url: "#", color: "hover:text-amber-600" },
     { name: "Instagram", icon: Instagram, url: "#", color: "hover:text-amber-500" },
     { name: "YouTube", icon: Youtube, url: "#", color: "hover:text-amber-700" },
+    { name: "Tiktik", icon: FaTiktok, url: "#", color: "hover:text-amber-700" },
   ];
 
   const contactInfo = [
     { icon: Phone, text: "+1 (343) 551-8233", url: "tel:+1(343) 551-8233" },
-    { icon: Clock, text: "Sur rendez-vous : Mar-Dim", url: "#" },
+    { icon: Clock, text: "Sur rendez-vous : Mar-Dim (24h/24) ", url: "#" },
   ];
 
   const quickLinks = [
@@ -32,18 +35,12 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-br from-amber-900 via-amber-800 to-amber-900 text-amber-100 overflow-hidden">
-      {/* Ligne décorative */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-orange-600"></div>
+    <footer className="relative items-center justify-center bg-gradient-to-br from-amber-900 via-amber-800 to-amber-900 text-amber-100 overflow-hidden">
 
-      {/* Décorations */}
-      <div className="absolute -top-16 -left-10 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-20 -right-10 w-40 h-40 bg-orange-400/10 rounded-full blur-3xl"></div>
-
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div className="max-w-7xl  mx-auto px-6 sm:px-8 lg:px-10 py-16 relative z-10">
+        <div className="grid grid-col-3 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-12 justify-center">
           {/* Brand */}
-          <div>
+          <div className="flex flex-col">
             <div className="flex items-center space-x-3 mb-6">
               <div className="bg-gradient-to-br from-amber-500 to-orange-600 p-2.5 rounded-full shadow-lg">
                 <Scissors className="w-8 h-8 text-white" />
