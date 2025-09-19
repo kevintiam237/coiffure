@@ -3,42 +3,35 @@ import { FaTiktok } from "react-icons/fa";
 import {
   Heart,
   Instagram,
-  Facebook,
-  Youtube,
-  Phone,
+  Calendar,
   Clock,
   Scissors,
   Sparkles,
   Home,
 } from "lucide-react";
 
-
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: "Facebook", icon: Facebook, url: "#", color: "hover:text-amber-600" },
-    { name: "Instagram", icon: Instagram, url: "#", color: "hover:text-amber-500" },
-    { name: "YouTube", icon: Youtube, url: "#", color: "hover:text-amber-700" },
-    { name: "Tiktik", icon: FaTiktok, url: "#", color: "hover:text-amber-700" },
+    { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/labraideuse", color: "hover:text-amber-500" },
   ];
 
   const contactInfo = [
-    { icon: Phone, text: "+1 (343) 551-8233", url: "tel:+1(343) 551-8233" },
-    { icon: Clock, text: "Sur rendez-vous : Mar-Dim (24h/24) ", url: "#" },
+    { icon: Calendar, text: "Réservation en ligne ou via DM", url: "#booking" },
+    { icon: Clock, text: "Mar–dim, 24 h sur rendez-vous", url: "#" },
   ];
 
   const quickLinks = [
-    { name: "Nos Services", url: "#services" },
-    { name: "Politique de service", url: "#politique" },
-    { name: "Contact", url: "#contact" },
+    { name: "Nos services", url: "#services" },
+    { name: "Politique de service", url: "#policy" },
+    { name: "Nous contacter", url: "#contact" },
   ];
 
   return (
     <footer className="relative items-center justify-center bg-gradient-to-br from-amber-900 via-amber-800 to-amber-900 text-amber-100 overflow-hidden">
-
-      <div className="max-w-7xl  mx-auto px-6 sm:px-8 lg:px-10 py-16 relative z-10">
-        <div className="grid grid-col-3 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-12 justify-center">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-12 justify-center">
           {/* Brand */}
           <div className="flex flex-col">
             <div className="flex items-center space-x-3 mb-6">
@@ -70,7 +63,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-xl mb-4 flex items-center text-amber-100">
               <Home className="w-5 h-5 text-amber-400 mr-2" />
-              Service à Domicile
+              Service à domicile
             </h4>
             <div className="space-y-4">
               {contactInfo.map((item, index) => (
@@ -92,7 +85,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-xl mb-4 flex items-center text-amber-100">
               <Sparkles className="w-5 h-5 text-amber-400 mr-2" />
-              À Découvrir
+              À découvrir
             </h4>
             <div className="grid grid-cols-1 gap-3">
               {quickLinks.map((link, index) => (
