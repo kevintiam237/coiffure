@@ -39,7 +39,7 @@ export default function Footer() {
                 <Scissors className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-playfair text-3xl font-bold bg-gradient-to-r from-amber-300 to-amber-200 bg-clip-text text-transparent">
-                La Braideuse
+                LaBraideuse
               </h3>
             </div>
             <p className="text-amber-200 mb-6 leading-relaxed">
@@ -106,7 +106,7 @@ export default function Footer() {
         <div className="border-t border-amber-700/50 pt-4 mt-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 text-sm text-amber-300">
             <p className="flex items-center">
-              © {currentYear} La Braideuse. Tous droits réservés.
+              © {currentYear} LaBraideuse. Tous droits réservés.
               <Heart className="w-4 h-4 text-amber-400 fill-current mx-1 animate-pulse" />
             </p>
             <div className="flex items-center space-x-6">

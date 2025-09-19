@@ -51,7 +51,7 @@ export default function Header({ onBooking }) {
             </div>
             <div>
               <h1 className="font-playfair text-3xl font-bold bg-gradient-to-r from-amber-700 to-amber-500 bg-clip-text text-transparent">
-                La Braideuse
+                LaBraideuse
               </h1>
               <div className="flex items-center space-x-1">
                 <Sparkles className="w-3 h-3 text-amber-500 animate-pulse" />

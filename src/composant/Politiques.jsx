@@ -99,7 +99,7 @@ export default function Politique() {
             "Chaque détail compte. Votre confort, votre temps et votre beauté méritent le meilleur. 
             Merci de votre confiance — à très vite chez vous, pour un moment de soin et d’élégance."
           </p>
-          <p className="text-amber-700 font-semibold mt-3">— Elza, La Braideuse</p>
+          <p className="text-amber-700 font-semibold mt-3 italic">LaBraideuse</p>
         </div>
       </div>
     </section>

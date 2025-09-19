@@ -126,7 +126,11 @@ export default function Services({ onBooking }) {
                 </p>
               </div>
             )}
+          <button> en savoir plus sur les services
+            
+          </button>
           </>
+
         )}
       </div>
 

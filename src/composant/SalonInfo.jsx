@@ -9,7 +9,7 @@ export default function SalonInfo() {
     {
       emoji: "🕒",
       title: "Disponibilités",
-      content: "Du mardi au dimanche, 24 h/24\nInterventions sur créneaux fixes ou urgences"
+      content: "Du mardi au dimanche, 24 h/24\nInterventions sur créneaux fixes ou service express"
     },
     {
       emoji: "📍",

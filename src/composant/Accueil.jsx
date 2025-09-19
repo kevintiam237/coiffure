@@ -44,9 +44,9 @@ export default function Accueil({ onBooking }) {
 
           {/* Titre principal */}
           <h1 className="font-playfair text-5xl md:text-7xl font-bold text-amber-900 mb-6 leading-tight tracking-tight">
-            Bienvenue clez{" "}
+            Bienvenue chez{" "}
             <span className="relative bg-gradient-to-r from-amber-600 to-amber-500 bg-clip-text text-transparent">
-              La Braideuse
+              LaBraideuse
               <Sparkles className="absolute -top-6 -right-10 w-8 h-8 text-amber-400 animate-pulse" />
             </span> Votre salon de Coiffure a Domicile 24h/24
           </h1>
