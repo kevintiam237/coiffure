@@ -136,8 +136,7 @@ export default function Services({ onBooking, showFlyer,setShowFlyer }) {
             
             <div className="text-center mt-12">
               <a 
-                href="#" 
-                className="inline-flex items-center text-amber-600 font-medium hover:text-amber-700 transition-colors duration-300 group"
+                className="inline-flex cursor-pointer items-center text-amber-600 font-medium hover:text-amber-700 transition-colors duration-300 group"
                 onClick={() => setShowFlyer(!showFlyer)}
     >
       {showFlyer ? 'Fermer le flyer' : 'En savoir plus sur les services' }
