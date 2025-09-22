@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Méthode non autorisée" });
   }
 
-  const { name, email, phone, service, date, time, adress, message } = req.body;
+  const { name, email, phone, service, date, time, address, message } = req.body;
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 - Service : ${service}
 - Date : ${date}
 - Heure : ${time}
-- Adresse : ${adress}
+- Adresse : ${address}
 - Message : ${message || "Aucun message"}
     `,
   };
