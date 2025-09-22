@@ -1,11 +1,11 @@
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
+  if (req.method !== "POST") {
     return res.status(405).json({ error: "Méthode non autorisée" });
   }
 
-  const { name, email, phone, service, date, time, message } = req.body;
+  const { name, email, phone, service, date, time, adress, message } = req.body;
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -29,6 +29,7 @@ export default async function handler(req, res) {
 - Service : ${service}
 - Date : ${date}
 - Heure : ${time}
+- Adresse : ${adress}
 - Message : ${message || "Aucun message"}
     `,
   };
